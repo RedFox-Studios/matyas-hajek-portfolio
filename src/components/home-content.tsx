@@ -1,7 +1,8 @@
 "use client"
 
+import { useEffect, useRef } from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { motion, useMotionTemplate, useMotionValue } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react'
 import type { Dictionary } from "@/lib/dictionary"
@@ -35,24 +36,50 @@ interface HomeContentProps {
 }
 
 export function HomeContent({ dict, locale }: HomeContentProps) {
+  const ref = useRef<HTMLDivElement>(null)
+  const mouseX = useMotionValue(0)
+  const mouseY = useMotionValue(0)
+
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      const { currentTarget, clientX, clientY } = event
+      if (!currentTarget || !(currentTarget instanceof HTMLElement)) return
+
+      const { left, top } = currentTarget.getBoundingClientRect()
+      mouseX.set(clientX - left)
+      mouseY.set(clientY - top)
+    }
+
+    ref.current?.addEventListener("mousemove", handleMouseMove)
+
+    return () => {
+      ref.current?.removeEventListener("mousemove", handleMouseMove)
+    }
+  }, [mouseX, mouseY])
+
   return (
-    <div className="relative min-h-screen">
-      {/* Gradient background */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,theme(colors.primary.100/20),transparent_50%)] dark:bg-[radial-gradient(circle_at_top,theme(colors.primary.900/20),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,theme(colors.purple.100/20),transparent_50%)] dark:bg-[radial-gradient(circle_at_bottom_left,theme(colors.purple.900/20),transparent_50%)]" />
-      </div>
+    <div 
+      ref={ref} 
+      className="relative min-h-screen bg-grid"
+      style={{
+        "--x": useMotionTemplate`${mouseX}px`,
+        "--y": useMotionTemplate`${mouseY}px`,
+      } as React.CSSProperties}
+    >
+      <div className="pointer-events-none absolute inset-0 spotlight" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/50 to-background" />
       
-      <section className="container flex min-h-screen flex-col items-center justify-center gap-12 py-8 md:py-12">
+      <section className="container relative flex min-h-screen flex-col items-center justify-center gap-12 py-8 md:py-12">
         <motion.div
-          className="flex max-w-[64rem] flex-col items-center gap-6 text-center"
+          className="flex max-w-[64rem] flex-col items-center gap-8 text-center"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           <motion.div variants={itemVariants}>
-            <span className="inline-flex items-center rounded-full border bg-background/95 px-3 py-1 text-sm text-foreground backdrop-blur transition-colors dark:bg-background/85">
-              <span className="mr-1">✨</span> Welcome to my portfolio
+            <span className="inline-flex items-center rounded-full border px-3 py-1 text-sm">
+              <span className="block h-2 w-2 rounded-full bg-green-500" />
+              <span className="ml-2">Available for work</span>
             </span>
           </motion.div>
 
@@ -60,22 +87,22 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
             className="space-y-4"
             variants={itemVariants}
           >
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-              <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                {dict.home.title}
-              </span>
+            <h1 className="balance-text text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+              <span className="text-gradient">{dict.home.title}</span>
             </h1>
-            <h2 className="text-xl font-medium text-muted-foreground sm:text-2xl md:text-3xl">
+            <p className="mx-auto max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
               {dict.home.subtitle}
-            </h2>
+            </p>
           </motion.div>
           
-          <motion.p
-            className="max-w-[42rem] text-lg leading-relaxed text-muted-foreground sm:text-xl sm:leading-8"
+          <motion.div
+            className="mx-auto mt-4 max-w-[42rem] leading-normal text-muted-foreground sm:text-lg sm:leading-8"
             variants={itemVariants}
           >
-            {dict.home.description}
-          </motion.p>
+            <p className="balance-text">
+              {dict.home.description}
+            </p>
+          </motion.div>
 
           <motion.div
             className="flex flex-wrap justify-center gap-4"
@@ -84,19 +111,18 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
             <Button 
               asChild 
               size="lg" 
-              className="group relative overflow-hidden rounded-full bg-primary px-8 py-6 transition-transform hover:translate-y-[-2px]"
+              className="h-12 rounded-full px-8 text-base"
             >
-              <Link href={`/${locale}/contact`}>
+              <Link href={`/${locale}/contact`} className="group">
                 {dict.home.cta.contact}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                <span className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/50 via-primary to-purple-600 opacity-0 transition-opacity group-hover:opacity-100" />
               </Link>
             </Button>
             <Button 
               asChild 
               variant="outline" 
               size="lg" 
-              className="rounded-full px-8 py-6 transition-transform hover:translate-y-[-2px] hover:bg-muted/50"
+              className="h-12 rounded-full px-8 text-base"
             >
               <Link href={`/${locale}/about`}>
                 {dict.home.cta.about}
@@ -111,34 +137,35 @@ export function HomeContent({ dict, locale }: HomeContentProps) {
           initial="hidden"
           animate="visible"
         >
+          
           <motion.a
             href="https://github.com/maty7253"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative rounded-full p-3 transition-transform hover:scale-110"
+            className="group relative rounded-full p-3 transition-all hover:scale-110 hover:bg-secondary"
             variants={itemVariants}
           >
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/50 via-primary to-purple-600 opacity-0 blur transition-opacity group-hover:opacity-70" />
-            <Github className="h-6 w-6 relative z-10" />
+            <Github className="h-6 w-6" />
           </motion.a>
+
           <motion.a
             href="https://linkedin.com/in/matyas-hajek"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative rounded-full p-3 transition-transform hover:scale-110"
+            className="group relative rounded-full p-3 transition-all hover:scale-110 hover:bg-secondary"
             variants={itemVariants}
           >
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/50 via-primary to-purple-600 opacity-0 blur transition-opacity group-hover:opacity-70" />
-            <Linkedin className="h-6 w-6 relative z-10" />
+            <Linkedin className="h-6 w-6" />
           </motion.a>
+
           <motion.a
-            href="mailto:contact@matyas-hajek.com"
-            className="group relative rounded-full p-3 transition-transform hover:scale-110"
+            href="mailto:matyas.hajek.000@gmail.com"
+            className="group relative rounded-full p-3 transition-all hover:scale-110 hover:bg-secondary"
             variants={itemVariants}
           >
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/50 via-primary to-purple-600 opacity-0 blur transition-opacity group-hover:opacity-70" />
-            <Mail className="h-6 w-6 relative z-10" />
+            <Mail className="h-6 w-6" />
           </motion.a>
+          
         </motion.div>
       </section>
     </div>

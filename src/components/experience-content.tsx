@@ -8,10 +8,10 @@ import type { Dictionary } from "@/lib/dictionary"
 const experiences = [
   {
     title: "Full Stack Developer",
-    company: "Tech Company",
+    company: "RedFox Studios",
     period: "2022 - Present",
     description: "Developing and maintaining web applications using Next.js, React, and TypeScript.",
-    technologies: ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL"],
+    technologies: ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "shadcn/ui"],
   },
   {
     title: "Frontend Developer",
@@ -21,9 +21,9 @@ const experiences = [
     technologies: ["React", "JavaScript", "CSS", "HTML"],
   },
   {
-    title: "Web Developer Intern",
+    title: "Web Developer - First Steps",
     company: "Startup",
-    period: "2020 - 2021",
+    period: "2015 - 2020",
     description: "Assisted in developing web applications and learned modern development practices.",
     technologies: ["JavaScript", "HTML", "CSS", "Git"],
   },

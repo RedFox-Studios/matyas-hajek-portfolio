@@ -42,17 +42,9 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
           variants={pageVariants}
           className="relative"
         >
-          <motion.div
-            className="absolute inset-0 z-50 bg-background"
-            initial={{ scaleY: 1 }}
-            animate={{ scaleY: 0, transition: { duration: 0.5, ease: [0.61, 1, 0.88, 1] } }}
-            exit={{ scaleY: 1, transition: { duration: 0.5, ease: [0.61, 1, 0.88, 1] } }}
-            style={{ originY: 0 }}
-          />
           {children}
         </motion.div>
       </AnimatePresence>
     </>
   )
 }
-

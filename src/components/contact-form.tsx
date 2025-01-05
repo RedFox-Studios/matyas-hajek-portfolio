@@ -6,7 +6,7 @@ import { Loader2 } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { useToast } from "@/components/ui/use-toast"
+import { Toast } from "@/components/ui/toast"
 import { submitContact } from "@/app/actions"
 
 export function ContactForm() {

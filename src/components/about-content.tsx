@@ -48,9 +48,9 @@ export function AboutContent({ dict, locale }: AboutContentProps) {
                   <div className="space-y-2">
                     <h3 className="text-lg font-semibold">Education</h3>
                     <p className="text-sm text-muted-foreground">
-                      Computer Science, B.Sc.
+                      Computer Science
                       <br />
-                      Technical University, 2018-2022
+                      Technical University
                     </p>
                   </div>
                   

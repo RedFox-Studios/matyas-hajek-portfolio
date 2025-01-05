@@ -42,34 +42,34 @@ export async function Header({ locale }: HeaderProps) {
   ]
 
   return (
-    <header className="fixed top-0 z-50 w-full glass-effect border-b">
-      <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex h-16 min-h-[4rem] items-center justify-between">
         <Link 
           href={`/${locale}`} 
-          className="flex items-center space-x-2 transition-transform hover:scale-105"
+          className="mr-6 flex items-center space-x-2"
         >
-          <span className="text-xl font-bold text-gradient">Matyáš Hájek</span>
+          <span className="text-lg font-bold tracking-tight">MH</span>
         </Link>
         
-        <div className="hidden md:flex md:flex-1 md:justify-center">
+        <div className="hidden flex-1 md:flex md:justify-center">
           <MainNav items={navItems} />
         </div>
         
         <div className="flex items-center gap-2">
-          <ThemeToggle />
-          <LanguageSwitcher />
+          <nav className="flex items-center gap-2">
+            <ThemeToggle />
+            <LanguageSwitcher />
+          </nav>
           
           <Sheet>
             <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon" className="hover:bg-primary/10">
+              <Button variant="ghost" size="icon" className="shrink-0">
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] glass-effect">
-              <div className="mt-6">
-                <MainNav items={navItems} className="flex-col items-start space-y-2" />
-              </div>
+            <SheetContent side="right" className="w-[280px] pr-0">
+              <MainNav items={navItems} className="flex-col items-start gap-4" />
             </SheetContent>
           </Sheet>
         </div>
