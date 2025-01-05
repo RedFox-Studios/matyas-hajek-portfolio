@@ -1,7 +1,7 @@
 # Matyáš Hájek Portfolio 🚀
 
-[![Dark Theme](./public/screenshots/light.png)]
-[![Light Theme](./public/screenshots/light.png)]
+![Dark Theme](./public/screenshots/dark.png)
+![Light Theme](./public/screenshots/light.png)
 
 A modern, responsive portfolio website built with Next.js, featuring multi-language support, smooth animations, and a clean design.
 
