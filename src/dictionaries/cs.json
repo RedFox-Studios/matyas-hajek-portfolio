@@ -1,0 +1,74 @@
+{
+    "navigation": {
+      "home": "Domů",
+      "about": "O mně",
+      "skills": "Dovednosti",
+      "experience": "Zkušenosti",
+      "why-me": "Proč já",
+      "contact": "Kontakt"
+    },
+    "theme": {
+      "light": "Světlý",
+      "dark": "Tmavý",
+      "system": "Systém"
+    },
+    "home": {
+      "title": "Matyáš Hájek",
+      "subtitle": "Full Stack vývojář",
+      "description": "Vytvářím moderní webové aplikace se zaměřením na uživatelský zážitek a výkon.",
+      "cta": {
+        "contact": "Kontaktujte mě",
+        "about": "Více o mně"
+      }
+    },
+    "about": {
+      "title": "O mně",
+      "description": "Ahoj, jsem Matyáš! Jsem full stack vývojář z České republiky, momentálně žijící v Kalifornii.",
+      "content": "Specializuji se na vývoj moderních webových aplikací pomocí Next.js, React a TypeScript. S vášní pro čistý kód a uživatelský zážitek vytvářím škálovatelná a udržitelná řešení."
+    },
+    "skills": {
+      "title": "Dovednosti",
+      "description": "Technologie a nástroje, se kterými pracuji",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Nástroje",
+      "sections": {
+        "frontend": "Moderní frontend technologie a frameworky",
+        "backend": "Backend technologie a databáze",
+        "tools": "Vývojářské nástroje a platformy"
+      }
+    },
+    "experience": {
+      "title": "Zkušenosti",
+      "description": "Moje profesní cesta",
+      "current": "Současnost"
+    },
+    "why-me": {
+      "title": "Proč já",
+      "description": "Čím se odlišuji",
+      "points": {
+        "innovative": "Inovativní řešitel problémů",
+        "dedicated": "Zaměřený na kvalitu",
+        "collaborative": "Týmový hráč"
+      }
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Spojte se se mnou",
+      "form": {
+        "name": "Jméno",
+        "email": "Email",
+        "message": "Zpráva",
+        "send": "Odeslat zprávu",
+        "sending": "Odesílání...",
+        "success": "Zpráva byla úspěšně odeslána!",
+        "error": "Něco se pokazilo. Zkuste to prosím znovu."
+      },
+      "connect": {
+        "title": "Spojte se se mnou",
+        "description": "Najdete mě na těchto platformách",
+        "github": "GitHub profil",
+        "discord": "Discord profil"
+      }
+    }
+  }  

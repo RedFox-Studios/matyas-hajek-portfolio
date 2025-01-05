@@ -1,0 +1,74 @@
+{
+    "navigation": {
+      "home": "Startseite",
+      "about": "Über mich",
+      "skills": "Fähigkeiten",
+      "experience": "Erfahrung",
+      "why-me": "Warum ich",
+      "contact": "Kontakt"
+    },
+    "theme": {
+      "light": "Hell",
+      "dark": "Dunkel",
+      "system": "System"
+    },
+    "home": {
+      "title": "Matyáš Hájek",
+      "subtitle": "Full Stack Entwickler",
+      "description": "Entwicklung moderner Webanwendungen mit Fokus auf Benutzererfahrung und Leistung.",
+      "cta": {
+        "contact": "Kontakt aufnehmen",
+        "about": "Mehr erfahren"
+      }
+    },
+    "about": {
+      "title": "Über mich",
+      "description": "Hallo, ich bin Matyáš! Ich bin ein Full Stack Entwickler aus Tschechien, der derzeit in Kalifornien lebt.",
+      "content": "Ich spezialisiere mich auf die Entwicklung moderner Webanwendungen mit Next.js, React und TypeScript. Mit Leidenschaft für sauberen Code und Benutzererfahrung erstelle ich skalierbare und wartbare Lösungen."
+    },
+    "skills": {
+      "title": "Fähigkeiten",
+      "description": "Technologien und Tools, mit denen ich arbeite",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Werkzeuge",
+      "sections": {
+        "frontend": "Moderne Frontend-Technologien und Frameworks",
+        "backend": "Backend-Technologien und Datenbanken",
+        "tools": "Entwicklungswerkzeuge und Plattformen"
+      }
+    },
+    "experience": {
+      "title": "Erfahrung",
+      "description": "Mein beruflicher Werdegang",
+      "current": "Aktuell"
+    },
+    "why-me": {
+      "title": "Warum ich",
+      "description": "Was mich auszeichnet",
+      "points": {
+        "innovative": "Innovativer Problemlöser",
+        "dedicated": "Qualitätsorientiert",
+        "collaborative": "Teamplayer"
+      }
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Kontaktieren Sie mich",
+      "form": {
+        "name": "Name",
+        "email": "E-Mail",
+        "message": "Nachricht",
+        "send": "Nachricht senden",
+        "sending": "Wird gesendet...",
+        "success": "Nachricht erfolgreich gesendet!",
+        "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+      },
+      "connect": {
+        "title": "Verbinden Sie sich mit mir",
+        "description": "Finden Sie mich auf diesen Plattformen",
+        "github": "GitHub Profil",
+        "discord": "Discord Profil"
+      }
+    }
+  }  

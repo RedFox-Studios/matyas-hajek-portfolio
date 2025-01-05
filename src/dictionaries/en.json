@@ -1,0 +1,74 @@
+{
+    "navigation": {
+      "home": "Home",
+      "about": "About",
+      "skills": "Skills",
+      "experience": "Experience",
+      "why-me": "Why Me",
+      "contact": "Contact"
+    },
+    "theme": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "home": {
+      "title": "Matyáš Hájek",
+      "subtitle": "Full Stack Developer",
+      "description": "Building modern web applications with a focus on user experience and performance.",
+      "cta": {
+        "contact": "Get in Touch",
+        "about": "Learn More"
+      }
+    },
+    "about": {
+      "title": "About Me",
+      "description": "Hi, I'm Matyáš! I'm a full stack developer from the Czech Republic, currently living in California.",
+      "content": "I specialize in building modern web applications using Next.js, React, and TypeScript. With a passion for clean code and user experience, I create scalable and maintainable solutions."
+    },
+    "skills": {
+      "title": "Skills",
+      "description": "Technologies and tools I work with",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Tools & Others",
+      "sections": {
+        "frontend": "Modern frontend technologies and frameworks",
+        "backend": "Backend technologies and databases",
+        "tools": "Development tools and platforms"
+      }
+    },
+    "experience": {
+      "title": "Experience",
+      "description": "My professional journey",
+      "current": "Present"
+    },
+    "why-me": {
+      "title": "Why Me",
+      "description": "What makes me stand out",
+      "points": {
+        "innovative": "Innovative Problem Solver",
+        "dedicated": "Dedicated to Quality",
+        "collaborative": "Collaborative Team Player"
+      }
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Get in touch",
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "send": "Send Message",
+        "sending": "Sending...",
+        "success": "Message sent successfully!",
+        "error": "Something went wrong. Please try again."
+      },
+      "connect": {
+        "title": "Connect with me",
+        "description": "Find me on these platforms",
+        "github": "GitHub Profile",
+        "discord": "Discord Profile"
+      }
+    }
+  }  
